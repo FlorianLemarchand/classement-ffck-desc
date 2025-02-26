@@ -37,5 +37,5 @@ Pour toute remarque, veuillez écrire à l'adresse mail suivante: affichagedesce
 """
 )
 
-button(username="flck", floating=True, width=60)
+button(username="flck", floating=True, width=220)
 
