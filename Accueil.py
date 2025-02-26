@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.buy_me_a_coffee import button 
 
 # Show the page title and description.
 st.set_page_config(page_title="Classements Descente",
@@ -35,4 +36,6 @@ Seules les informations disponibles sur le site [FFCK](https://www.ffck.org/desc
 Pour toute remarque, veuillez écrire à l'adresse mail suivante: affichagedescente@gmail.com
 """
 )
+
+button(username="flck", floating=True, width=60)
 

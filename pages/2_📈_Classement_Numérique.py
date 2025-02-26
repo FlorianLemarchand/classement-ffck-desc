@@ -2,4 +2,4 @@ import streamlit as st
 import pandas as pd
 
 
-st.markdown("# Plotting Demo")
+st.markdown("# Classement Numérique")
