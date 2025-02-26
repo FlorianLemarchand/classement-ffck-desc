@@ -19,7 +19,7 @@ Seules les informations disponibles sur le site [FFCK](https://www.ffck.org/desc
 
 - [Classement Numérique](https://classement-ffck-desc-mqo63rtilj6dpjgzzmdsoq.streamlit.app/Classement_Numérique)
 
-### En cours de développement
+### Liste des développements futurs
 
 - Classement numérique:
     - Hyperlien compétiteur pour accès aux différents résultats
