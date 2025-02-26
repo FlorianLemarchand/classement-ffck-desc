@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_extras.buy_me_a_coffee import button 
+from streamlit_extras.add_vertical_space import add_vertical_space 
 
 # Show the page title and description.
 st.set_page_config(page_title="Classements Descente",
@@ -37,5 +38,7 @@ Pour toute remarque, veuillez écrire à l'adresse mail suivante: affichagedesce
 """
 )
 
-button(username="flck", floating=True, width=220)
+add_vertical_space(1)
+
+button(username="flck", floating=False, width=220, bg_color="#A6A6A8")
 
