@@ -13,6 +13,8 @@ st.markdown(
     en attendant la refonte de la page descente FFCK. Ces classements sont officieux. Seules
     les informations disponibles sur le site [FFCK](https://www.ffck.org/descente/) 
     ont un caractère officiel.
+
+    - [Classement Coupe de France](https://classement-ffck-desc-mqo63rtilj6dpjgzzmdsoq.streamlit.app/Coupe_de_France)
     
 """
 )
