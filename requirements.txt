@@ -5,3 +5,4 @@ sqlalchemy
 tabulate
 streamlit
 streamlit-extras
+streamlit_pdf_viewer
