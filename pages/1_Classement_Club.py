@@ -75,7 +75,7 @@ with tab2.container():
         if penalite > 0:            
             tab2.write(f"{points} points dont {penalite} de pénalités")
         else:
-            tab2.write("Pas de pénalité")
+            tab2.write(f"{points} points")
         
     data_club = details.loc[details.code_club==option].drop('code_club', axis=1).sort_values('Valeur').reset_index(drop=True)
     data_club.index = data_club.index + 1
