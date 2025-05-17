@@ -1,2 +1,7 @@
+numpy
+pandas
+pymysql
+sqlalchemy
+tabulate
 streamlit
 streamlit-extras

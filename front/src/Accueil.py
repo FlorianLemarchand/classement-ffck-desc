@@ -15,7 +15,7 @@ st.markdown(
 
 Cette page a pour but de permettre l'accès aux classements descente en attendant la refonte de la page descente FFCK. 
 
-Ces classements sont officieux, réalisés par des bénévoles. 
+Ces classements sont officieux, réalisés bénévolement. 
 
 Seules les informations disponibles sur le site [FFCK](https://www.ffck.org/descente/) ont un caractère officiel.
 
@@ -40,5 +40,5 @@ Pour toute remarque, veuillez écrire à l'adresse mail suivante: affichagedesce
 
 add_vertical_space(1)
 
-button(username="flck", floating=False, width=220, bg_color="#A6A6A8")
+# button(username="flck", floating=False, width=220, bg_color="#A6A6A8")
 
