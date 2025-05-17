@@ -8,7 +8,7 @@ st.markdown("# Classement Club")
 def load_club_details():
     df = pd.read_csv(r"data/classement_club_details.csv")
     df.columns = ['Embarcation', 'Catégorie', 'Prénom', 'Nom', 'Valeur', '', 'code_club']
-    df['Valeur'] = df['Valeur'].apply(lambda x: f"{x:.2f}")
+    df['Valeur'] = df['Valeur'].apply(lambda x: f"{x:.2f}").astype(float)
     return df
 
 @st.cache_data
