@@ -17,9 +17,7 @@ Ces classements sont officieux, réalisés bénévolement.
 
 Seules les informations disponibles sur le site [FFCK](https://www.ffck.org/descente/) ont un caractère officiel.
 
-### Pages Disponibles
 
-- [Classement Numérique](https://classement-ffck-desc-mqo63rtilj6dpjgzzmdsoq.streamlit.app/Classement_Numérique)
 
 ### Liste des développements futurs
 
