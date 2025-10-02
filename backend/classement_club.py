@@ -175,13 +175,10 @@ def classement_club(db_connection, id_classement:int, bonus_file_path:str=None, 
     # Ordonnancement par numéro de club puis par points croissants 
     numerique = numerique.sort_values(by=['numero_club', 'point'], ascending=[True, True])
 
-    print(numerique.columns)
-
     # Lecture des bonus
     if bonus_file_path:
         bonus_data = pd.read_csv(bonus_file_path)[['code_club', 'Total_bonus']]
         bonus_data['code_club'] = bonus_data['code_club'].astype(str)
-        print(bonus_data)  
         bonus_exists = True
     else:
         bonus_exists = False 
@@ -198,7 +195,7 @@ def classement_club(db_connection, id_classement:int, bonus_file_path:str=None, 
     for code_club in numeros_clubs:
         if bonus_exists and code_club in bonus_data['code_club'].values:
             bonus = bonus_data.loc[bonus_data.code_club == code_club, 'Total_bonus'].values[0]
-            print(f'Club {code_club} a un bonus de {bonus}')
+            # print(f'Club {code_club} a un bonus de {bonus}')
         else:
             bonus = 0
 

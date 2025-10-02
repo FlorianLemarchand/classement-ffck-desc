@@ -53,7 +53,7 @@ def display_table(tab, title, df_slice, color=None):
             'props': [('text-align', 'center')]
         }]
     )
-    tab.table(styled_df)
+    tab.table(styled_df, border='horizontal')
 
 display_table(tab1, "Nationale 1", df_classement[:15])
 display_table(tab1, "Nationale 2", df_classement[15:30])
@@ -73,29 +73,34 @@ option = tab2.selectbox(
 with tab2.container():
     if option:
         nom_club = df_classement.loc[df_classement['code_club'] == option, 'club'].values[0]
-        tab2.write(f"{option} - {nom_club}")
+        tab2.markdown(f"##### {option} - {nom_club}")
 
         penalite = df_classement.loc[df_classement['code_club'] == option, 'penalites'].values[0]
         points = df_classement.loc[df_classement['code_club'] == option, 'valeur'].values[0]
+        bonus = df_classement.loc[df_classement['code_club'] == option, 'bonus'].values[0]
+        position = df_classement.index[df_classement['code_club'] == option][0]
 
-        if penalite > 0:            
-            tab2.write(f"{points} points dont {penalite} de pénalités")
-        else:
-            tab2.write(f"{points} points")
+        extension = 'er' if position == 1 else 'ème'
+        tab2.write(f"Le club est {position} {extension} avec {points} points.")
+        if bonus > 0:
+            tab2.write(f"Dont bonus de course(s) par équipe de club : {bonus} points")
+        if penalite > 0:
+            tab2.write(f"Dont pénalité pour bateau(x) manquant(s) : {penalite} points")
 
-    data_club = df_classement_details.loc[df_classement_details.numero_club==option].drop(['numero_club', 'club', 'embarcation', 'categorie'], axis=1).reset_index(drop=True)
-    data_club.index = data_club.index + 1
-    data_club = data_club.rename(
-        columns={
-            data_club.columns[0]: 'Embarcation - Catégorie',
-            data_club.columns[1]: 'Nom Prénom',
-            data_club.columns[2]: 'Valeur',
-            data_club.columns[3]: ''
-        }
-    )
-    tab2.table(data_club.style.set_table_styles(
-        [{'selector': 'th', 'props': [('text-align', 'center')]}]
-    ))
+        data_club = df_classement_details.loc[df_classement_details.numero_club==option].drop(['numero_club', 'club', 'embarcation', 'categorie'], axis=1).reset_index(drop=True)
+        data_club.index = data_club.index + 1
+        data_club = data_club.rename(
+            columns={
+                data_club.columns[0]: 'Embarcation - Catégorie',
+                data_club.columns[1]: 'Nom Prénom',
+                data_club.columns[2]: 'Valeur',
+                data_club.columns[3]: ''
+            }
+        )
+
+        tab2.table(data_club.style.set_table_styles(
+            [{'selector': 'th', 'props': [('text-align', 'center')]}]
+        ))
 
 # tab2.write(f"Club affiché: {option}")
 
